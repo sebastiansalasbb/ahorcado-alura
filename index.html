@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="contenedor-inicial" id="presentacionDelJuego">
+        <h1>Juego del Ahorcado</h1>
+        <p class="descripcion">
+          En este juego, la computadora piensa en una palabra y deberás tratar
+          de adivinarla. Se mostrará una fila de guiones que representará a la
+          palabra a adivinar. El jugador tendrá 02:30 minutos y un máximo de 8
+          intentos erróneos para adivinar la palabra. Si el jugador sugiere una
+          letra y esta aparece en la palabra, se escribe en todas sus posiciones
+          correctas. Si no aparece, entonces se registrará la letra en pantalla
+          fuera de los guiones y se eliminará una parte del hombre ahorcado.
+        </p>
+        <p class="descripcion negrita">
+          El jugador gana cuando completa la palabra antes de agotar su tiempo y
+          digita menos de 9 letras incorrectas.
+        </p>
+        <button class="boton-iniciar-juego" id="botonDeJugar">
+          Iniciar Juego
+        </button>
+      </section>
+      <section id="loaderPrincipal" class="contenedor-loader ocultar">
+        <div class="loader"></div>
+        <p class="mensaje-loader">Cargando...</p>
+      </section>
+      <section id="contenedorJuego">
+        <canvas width="900" height="500" id="canvas"></canvas>
+        <p class="mensajeInformativo">
+          Comienza a teclear letras para adivinar la palabra
+        </p>
+      </section>
+      <dialog id="modalJuegoTerminado">
+        <h2 id="frasePerdidaVictoria">!!Ganaste!!!!!</h2>
+        <p id="fraseSecreta"></p>
+        <button id="botonModalTerminar">Terminar</button>
+      </dialog>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

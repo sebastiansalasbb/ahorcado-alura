@@ -1,0 +1,188 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main {
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border: 10px dashed green;
+}
+
+.contenedor-inicial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Rampart One", cursive;
+  font-size: 48px;
+  font-weight: 400;
+  color: #333;
+  margin: 2rem;
+}
+
+.descripcion {
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  line-height: 1.5;
+  width: 50%;
+  margin: 1rem;
+  text-align: justify;
+}
+
+.negrita {
+  font-weight: 700;
+}
+
+.boton-iniciar-juego {
+  background-color: #333;
+  color: #fff;
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  margin: 2rem auto;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.boton-iniciar-juego:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid green;
+  border-radius: 50%;
+  animation: girar 2s linear infinite;
+}
+
+@keyframes girar {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.mensaje-loader {
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: aparecer 2s linear infinite;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#contenedorJuego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+canvas {
+  width: 80%;
+  margin-top: 100px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#modalJuegoTerminado::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#modalJuegoTerminado {
+  width: 40%;
+  height: 30%;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  border-style: dashed;
+  border-width: 10px;
+  border-color: greenyellow;
+}
+
+#frasePerdidaVictoria {
+  font-size: 30px;
+  font-family: "Rampart One", cursive;
+  margin-bottom: 20px;
+}
+
+#fraseSecreta {
+  color: #ff0000;
+  font-family: "Kalam", cursive;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#botonModalTerminar {
+  background-color: #333;
+  color: #fff;
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0rem auto;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.mensajeInformativo {
+  font-family: "Kalam", cursive;
+  margin-top: 20px;
+}
+
+.ocultar {
+  display: none;
+}
